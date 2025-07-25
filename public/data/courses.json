@@ -1,0 +1,53 @@
+[
+  {
+    "category": "Frontend",
+    "courses": [
+      { "id": 1, "title": "HTML5 and CSS3 Fundamentals", "duration": "4 weeks", "level": "Beginner", "image": "https://example.com/images/frontend/html5-css3.jpg" },
+      { "id": 2, "title": "JavaScript Essentials", "duration": "6 weeks", "level": "Beginner", "image": "https://example.com/images/frontend/javascript.jpg" },
+      { "id": 3, "title": "React.js for Beginners", "duration": "5 weeks", "level": "Intermediate", "image": "https://example.com/images/frontend/react.jpg" },
+      { "id": 4, "title": "Advanced React and Redux", "duration": "6 weeks", "level": "Advanced", "image": "https://example.com/images/frontend/react-redux.jpg" },
+      { "id": 5, "title": "TypeScript Basics", "duration": "3 weeks", "level": "Intermediate", "image": "https://example.com/images/frontend/typescript.jpg" },
+      { "id": 6, "title": "Vue.js Framework", "duration": "5 weeks", "level": "Intermediate", "image": "https://example.com/images/frontend/vue.jpg" },
+      { "id": 7, "title": "Angular Fundamentals", "duration": "6 weeks", "level": "Intermediate", "image": "https://example.com/images/frontend/angular.jpg" },
+      { "id": 8, "title": "Responsive Web Design", "duration": "4 weeks", "level": "Beginner", "image": "https://example.com/images/frontend/responsive-design.jpg" },
+      { "id": 9, "title": "SASS and CSS Preprocessors", "duration": "3 weeks", "level": "Intermediate", "image": "https://example.com/images/frontend/sass.jpg" },
+      { "id": 10, "title": "UI/UX Design Principles", "duration": "4 weeks", "level": "Beginner", "image": "https://example.com/images/frontend/ui-ux.jpg" },
+      { "id": 11, "title": "Web Accessibility (a11y)", "duration": "3 weeks", "level": "Intermediate", "image": "https://example.com/images/frontend/accessibility.jpg" },
+      { "id": 12, "title": "Frontend Performance Optimization", "duration": "5 weeks", "level": "Advanced", "image": "https://example.com/images/frontend/performance.jpg" }
+    ]
+  },
+  {
+    "category": "Backend",
+    "courses": [
+      { "id": 1, "title": "Node.js Fundamentals", "duration": "6 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/nodejs.jpg" },
+      { "id": 2, "title": "Express.js Basics", "duration": "4 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/express.jpg" },
+      { "id": 3, "title": "Python for Backend Development", "duration": "6 weeks", "level": "Beginner", "image": "https://example.com/images/backend/python.jpg" },
+      { "id": 4, "title": "Django Framework", "duration": "5 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/django.jpg" },
+      { "id": 5, "title": "Ruby on Rails", "duration": "6 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/rails.jpg" },
+      { "id": 6, "title": "Database Management with SQL", "duration": "4 weeks", "level": "Beginner", "image": "https://example.com/images/backend/sql.jpg" },
+      { "id": 7, "title": "NoSQL Databases with MongoDB", "duration": "4 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/mongodb.jpg" },
+      { "id": 8, "title": "RESTful API Development", "duration": "5 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/rest-api.jpg" },
+      { "id": 9, "title": "GraphQL Basics", "duration": "3 weeks", "level": "Intermediate", "image": "https://example.com/images/backend/graphql.jpg" },
+      { "id": 10, "title": "Serverless Architecture", "duration": "4 weeks", "level": "Advanced", "image": "https://example.com/images/backend/serverless.jpg" },
+      { "id": 11, "title": "Microservices with Docker", "duration": "6 weeks", "level": "Advanced", "image": "https://example.com/images/backend/docker.jpg" },
+      { "id": 12, "title": "Backend Security Practices", "duration": "5 weeks", "level": "Advanced", "image": "https://example.com/images/backend/security.jpg" }
+    ]
+  },
+  {
+    "category": "Web Development",
+    "courses": [
+      { "id": 1, "title": "Full Stack Web Development", "duration": "8 weeks", "level": "Intermediate", "image": "https://example.com/images/webdev/fullstack.jpg" },
+      { "id": 2, "title": "Web Development Bootcamp", "duration": "12 weeks", "level": "Beginner", "image": "https://example.com/images/webdev/bootcamp.jpg" },
+      { "id": 3, "title": "MERN Stack Development", "duration": "7 weeks", "level": "Intermediate", "image": "https://example.com/images/webdev/mern.jpg" },
+      { "id": 4, "title": "PHP and MySQL for Web", "duration": "6 weeks", "level": "Intermediate", "image": "https://example.com/images/webdev/php-mysql.jpg" },
+      { "id": 5, "title": "ASP.NET Core Basics", "duration": "5 weeks", "level": "Intermediate", "image": "https://example.com/images/webdev/aspnet.jpg" },
+      { "id": 6, "title": "Web Hosting and Deployment", "duration": "3 weeks", "level": "Beginner", "image": "https://example.com/images/webdev/hosting.jpg" },
+      { "id": 7, "title": "Progressive Web Apps (PWA)", "duration": "4 weeks", "level": "Advanced", "image": "https://example.com/images/webdev/pwa.jpg" },
+      { "id": 8, "title": "Web Performance Optimization", "duration": "5 weeks", "level": "Advanced", "image": "https://example.com/images/webdev/performance.jpg" },
+      { "id": 9, "title": "SEO for Web Developers", "duration": "3 weeks", "level": "Beginner", "image": "https://example.com/images/webdev/seo.jpg" },
+      { "id": 10, "title": "Web Testing with Jest", "duration": "4 weeks", "level": "Intermediate", "image": "https://example.com/images/webdev/jest.jpg" },
+      { "id": 11, "title": "CI/CD for Web Projects", "duration": "4 weeks", "level": "Advanced", "image": "https://example.com/images/webdev/cicd.jpg" },
+      { "id": 12, "title": "Web Development with WordPress", "duration": "5 weeks", "level": "Beginner", "image": "https://example.com/images/webdev/wordpress.jpg" }
+    ]
+  }
+]
