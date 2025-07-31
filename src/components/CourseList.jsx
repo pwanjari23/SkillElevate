@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import CourseCard from "./CourseCard";
 import axios from "axios";
+import Shimmer from "./Shimmer";
 
 const COURSES_PER_PAGE = 8;
 
 const CourseList = () => {
   const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState([]);
-  const [currentPages, setCurrentPages] = useState({}); // Track page for each category
+  const [currentPages, setCurrentPages] = useState({});
+  const [loading, setLoading] = useState(true); // 🔁 Step 1: Loading state
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
         const res = await axios.get("/data/courses.json");
+
         setCategories(res.data);
-        // Initialize pagination for each category
+
         const initialPages = res.data.reduce((acc, category) => ({
           ...acc,
           [category.category]: 1,
         }), {});
         setCurrentPages(initialPages);
+
+        setLoading(false); // 🔁 Step 2: Set loading false after data fetch
       } catch (error) {
         console.error("Error fetching courses:", error);
+        setLoading(false); // Also stop loading on error
       }
     };
 
@@ -41,6 +48,11 @@ const CourseList = () => {
     setCurrentPages((prev) => ({ ...prev, [category]: page }));
   };
 
+  // 🔁 Step 3: Show shimmer while loading
+  if (loading) {
+    return <Shimmer />;
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {categories.map((category) => {
@@ -52,31 +64,36 @@ const CourseList = () => {
 
         return (
           <div key={category.category} className="mb-12">
-            {/* Category Header */}
             <h2 className="text-3xl font-bold mb-6 text-gray-800">
               {category.category} Courses
             </h2>
-            {/* Course Grid for the Category */}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
               {currentCourses.map((course) => (
-                <CourseCard
+                <Link
                   key={course.id}
-                  course={course}
-                  handleAddToCart={handleAddToCart}
-                />
+                  to={`/course/${category.category.toLowerCase()}-${course.id}`}
+                  className="cursor-pointer"
+                >
+                  <CourseCard
+                    course={course}
+                    handleAddToCart={handleAddToCart}
+                  />
+                </Link>
               ))}
             </div>
-            {/* Dot Pagination for the Category */}
+
             {totalPages > 1 && (
               <div className="flex justify-center mt-6 space-x-3">
                 {Array.from({ length: totalPages }, (_, index) => (
                   <button
                     key={index}
                     onClick={() => handlePageChange(category.category, index + 1)}
-                    className={`w-4 h-4 rounded-full focus:outline-none transition-all duration-300 ${currentPage === index + 1
-                      ? "bg-blue-600 scale-110 ring-2 ring-blue-300"
-                      : "bg-gray-300 hover:bg-gray-400"
-                      }`}
+                    className={`w-4 h-4 rounded-full focus:outline-none transition-all duration-300 ${
+                      currentPage === index + 1
+                        ? "bg-blue-600 scale-110 ring-2 ring-blue-300"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
                     aria-label={`Go to page ${index + 1} of ${category.category}`}
                   />
                 ))}

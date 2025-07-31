@@ -15,6 +15,9 @@ import TrainingNotice from "./components/TrainingNotice";
 import Contents from "./components/Contents";
 import Blogs from "./components/Blogs";
 import Plans from "./components/Plans";
+import CourseDetails from "./components/CourseDetails";
+import AboutUs from "./components/AboutUs";
+import Shimmer from "./components/Shimmer";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -41,6 +44,14 @@ function App() {
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <CourseList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/course/:id"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <CourseDetails />
               </ProtectedRoute>
             }
           />
@@ -76,11 +87,19 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/about"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <AboutUs />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn} />} />
         </Routes>
 
-        {/* {isLoggedIn && <Footer />} */}
+        {isLoggedIn && <Footer />}
       </Router>
 
       <ToastContainer position="top-center" autoClose={2000} />
